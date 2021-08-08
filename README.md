@@ -10,6 +10,8 @@
 		- [Installing Nginx](#installing-nginx)
 		- [Installing MySQL](#installing-mysql)
 		- [Installing PHP](#installing-php)
+	- [Configurations](#configurations)
+		- [Configuring Nginx to Use the PHP Processor](#configuring-nginx-to-use-the-php-processor)
 		
 		
 ## Introduction
@@ -114,3 +116,73 @@ sudo apt install php-fpm php-mysql
 ```
 
 You now have your PHP components installed. Next, you’ll configure Nginx to use them.
+
+## Configurations
+
+Time to make the configuration and host more than one domain on a single server.
+
+### Configuring Nginx to Use the PHP Processor
+
+When using the Nginx web server, we can create server blocks to encapsulate configuration details and host more than one domain on a single server. In this guide, we’ll use your_domain as an example domain name.
+
+Create the root web directory for your_domain as follows:
+
+```
+sudo mkdir /var/www/your_domain
+```
+
+Assign ownership of the directory with the $USER environment variable, which will reference your current system user:
+
+```
+sudo chown -R $USER:$USER /var/www/your_domain
+```
+
+Open a new configuration file in Nginx’s sites-available directory using your preferred command-line editor. Here, we’ll use vim:
+
+```
+sudo vim /etc/nginx/sites-available/your_domain
+```
+
+Paste in the following bare-bones configuration:
+```
+server {
+    listen 80;
+    server_name your_domain www.your_domain;
+    root /var/www/your_domain;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+}
+```
+Activate your configuration by linking to the config file from Nginx’s sites-enabled directory:
+
+```
+sudo ln -s /etc/nginx/sites-available/your_domain /etc/nginx/sites-enabled/
+```
+
+Unlink the default configuration file from the /sites-enabled/ directory:
+
+```
+sudo unlink /etc/nginx/sites-enabled/default
+```
+
+If any errors are reported, go back to your configuration file to review its contents before continuing.
+
+When you are ready, reload Nginx to apply the changes:
+
+```
+sudo systemctl reload nginx
+```
