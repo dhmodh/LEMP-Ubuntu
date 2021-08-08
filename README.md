@@ -30,3 +30,10 @@ goal", one at a time.
 For a system already running other version of server stacks (example LAMP),
 some additional steps (like removing those packages or disabling them) might
 be required. That is beyond the scope of this guide.
+
+### Specifications/Target
+
+* **Ubuntu**                v20.04
+* **Nginx**                 v1.18.0
+* **MySQL**                 v8.0.26
+* **PHP**                   v7.4.3
