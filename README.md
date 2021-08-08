@@ -1,6 +1,27 @@
+# To Configure SSH Key-Based Authentication on a Linux Server
+
+- [To Configure SSH Key-Based Authentication on a Linux Server](#to-configure-ssh-key-based-authentication-on-a-linux-server)
+
+	- [Introduction](#introduction)
+	- [Creating SSH Keys](#creating-ssh-keys)
+	
+## Introduction
+
+SSH, or secure shell, is an encrypted protocol used to administer and communicate with servers. When working with a Linux server you may often spend much of your time in a terminal session connected to your server through SSH.
+
+## Creating SSH Keys
+
+On your local computer, generate a SSH key pair by typing:
+
+```
+ssh-keygen
+```
+
+
+
+
 # A Relatively Secure LEMP Server Stack Setup in Ubuntu 20.04 LTS
 
-> By _Dishant Modh_
 
 - [A Relatively Secure LEMP Server Stack Setup in Ubuntu 20.04 LTS](#a-relatively-secure-lemp-server-stack-setup-in-ubuntu-2004-lts)
 	- [Introduction](#introduction)
