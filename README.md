@@ -17,6 +17,30 @@ On your local computer, generate a SSH key pair by typing:
 ssh-keygen
 ```
 
+The utility will prompt you to select a location for the keys that will be generated. By default, the keys will be stored in the ~/.ssh directory within your user’s home directory. The private key will be called id_rsa and the associated public key will be called id_rsa.pub.
+
+Then it will show you 
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/username/.ssh/id_rsa):
+```
+
+If you had previously generated an SSH key pair, you may see a prompt that looks like this:
+
+```
+/home/username/.ssh/id_rsa already exists.
+Overwrite (y/n)?
+```
+
+If you choose to overwrite the key on disk, you will not be able to authenticate using the previous key anymore.
+
+```
+Created directory '/home/username/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+```
+
+You can press ENTER to bypass this prompt.
 
 
 
