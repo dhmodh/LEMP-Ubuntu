@@ -283,10 +283,10 @@ http://server_domain_or_IP/info.php
 
 ## Conclusion
 
-There we have it! We should by now have a working and relatively secure LEMP
+There we have it! By now we should have a working and relatively secure LEMP
 server stack with Nginx running at
 [http://localhost](http://localhost "Localhost").
 
-_In this guide we didn't talk anything about firewall. This is because a fresh
+In this guide we didn't talk anything about firewall because, a fresh
 install Ubuntu 20.04 should not have one running it automatically.
 We may research about it later if we wish to.
