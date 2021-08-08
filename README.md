@@ -12,8 +12,8 @@
 		- [Installing PHP](#installing-php)
 	- [Configurations](#configurations)
 		- [Configuring Nginx to Use the PHP Processor](#configuring-nginx-to-use-the-php-processor)
-		
-		
+	- [Testing PHP with Nginx](#testing-php-with-nginx)
+				
 ## Introduction
 
 In this guide, **LEMP** stands for **Linux**, **Nginx** (pronounced as
@@ -186,3 +186,27 @@ When you are ready, reload Nginx to apply the changes:
 ```
 sudo systemctl reload nginx
 ```
+
+## Testing PHP with Nginx
+
+You can test it to validate that Nginx can correctly hand .php files off to your PHP processor.
+
+Open a new file called info.php within your document root in your text editor:
+
+```
+vim /var/www/your_domain/info.php
+```
+
+This is valid PHP code that will return information about your server:
+
+```
+<?php
+phpinfo();
+```
+
+Visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
+
+```
+http://server_domain_or_IP/info.php
+```
+
