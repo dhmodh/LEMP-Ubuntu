@@ -4,6 +4,7 @@
 
 	- [Introduction](#introduction)
 	- [Creating SSH Keys](#creating-ssh-keys)
+	- [Copying an SSH Public Key to Your Server](#copying-an-ssh-public-key-to-your-server)
 	
 ## Introduction
 
@@ -41,6 +42,14 @@ Enter same passphrase again:
 ```
 
 You can press ENTER to bypass this prompt.
+
+## Copying an SSH Public Key to Your Server
+
+The syntax is:
+```
+ssh-copy-id username@remote_host
+```
+
 
 
 
