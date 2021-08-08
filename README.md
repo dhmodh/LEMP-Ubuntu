@@ -5,6 +5,7 @@
 	- [Introduction](#introduction)
 	- [Creating SSH Keys](#creating-ssh-keys)
 	- [Copying an SSH Public Key to Your Server](#copying-an-ssh-public-key-to-your-server)
+	- [Authenticating to Your Server Using SSH Keys](#authenticating-to-your-server-using-ssh-keys)
 	
 ## Introduction
 
@@ -50,7 +51,17 @@ The syntax is:
 ssh-copy-id username@remote_host
 ```
 
+## Authenticating to Your Server Using SSH Keys
 
+If you have successfully completed one of the procedures above, you should be able to log into the remote host without the remote account’s password.
+
+The process is mostly the same:
+
+```
+ssh username@remote_host
+```
+
+If successful, continue on to find out how to lock down the server.
 
 
 # A Relatively Secure LEMP Server Stack Setup in Ubuntu 20.04 LTS
