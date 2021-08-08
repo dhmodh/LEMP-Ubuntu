@@ -5,6 +5,11 @@
 - [A Relatively Secure LEMP Server Stack Setup in Ubuntu 20.04 LTS](#a-relatively-secure-lemp-server-stack-setup-in-ubuntu-2004-lts)
 	- [Introduction](#introduction)
 		- [Specifications/Target](#specificationstarget)
+	- [The Installation](#the-installation)
+		- [Update APT](#update-apt)
+		- [Installing Nginx](#installing-nginx)
+		- [Installing MySQL](#installing-mysql)
+		- [Installing PHP](#installing-php)
 		
 		
 ## Introduction
@@ -37,3 +42,40 @@ be required. That is beyond the scope of this guide.
 * **Nginx**                 v1.18.0
 * **MySQL**                 v8.0.26
 * **PHP**                   v7.4.3
+
+## The Installation
+
+Let's finally begin the actual installations processes.
+
+_During the installation of any package, when faced with any unsure prompt,
+just go with the default option/action._
+
+### Update APT
+
+First, we want to make sure we have the latest records in our local packages
+registry. Let's run the following command in the terminal like so.
+
+```shell
+sudo apt update
+```
+
+### Installing Nginx
+
+First thing we’re going to install is the server called Nginx.
+
+```shell
+sudo apt install nginx
+```
+
+If you do not have a domain name pointed at your server and you do not know your server’s public IP address, you can find it by running the following command:
+
+```shell
+ip addr show eth0 | grep inet | awk '{ print $2; }' | sed 's/\/.*$//'
+```
+This will print out a few IP addresses. 
+
+Type the address that you receive in your web browser and it will take you to Nginx’s default landing page:
+
+```shell
+http://server_domain_or_IP
+```
