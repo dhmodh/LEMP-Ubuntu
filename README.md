@@ -79,3 +79,30 @@ Type the address that you receive in your web browser and it will take you to Ng
 ```shell
 http://server_domain_or_IP
 ```
+
+### Installing MySQL
+
+Now we want to install the database management system (DBMS). We choose MySQL.
+
+```shell
+sudo apt install mysql-server
+```
+
+When the installation is finished, this script will remove some insecure default settings and lock down access to your database system. Start the interactive script by running:
+
+```shell
+sudo mysql_secure_installation
+```
+
+When you’re finished, test if you’re able to log in to the MySQL console by typing:
+
+```shell
+sudo mysql
+```
+To exit the MySQL console, type:
+
+```
+exit
+```
+
+
