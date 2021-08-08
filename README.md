@@ -13,6 +13,7 @@
 	- [Configurations](#configurations)
 		- [Configuring Nginx to Use the PHP Processor](#configuring-nginx-to-use-the-php-processor)
 	- [Testing PHP with Nginx](#testing-php-with-nginx)
+	- [Conclusion](#conclusion)
 				
 ## Introduction
 
@@ -210,3 +211,12 @@ Visiting the domain name or public IP address you’ve set up in your Nginx conf
 http://server_domain_or_IP/info.php
 ```
 
+## Conclusion
+
+There we have it! We should by now have a working and relatively secure LEMP
+server stack with Nginx running at
+[http://localhost](http://localhost "Localhost").
+
+_In this guide we didn't talk anything about firewall. This is because a fresh
+install Ubuntu 20.04 should not have one running it automatically.
+We may research about it later if we wish to.
