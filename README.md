@@ -105,4 +105,12 @@ To exit the MySQL console, type:
 exit
 ```
 
+### Installing PHP
 
+You have Nginx installed to serve your content and MySQL installed to store and manage your data. Now you can install PHP to process code and generate dynamic content for the web server.
+
+```
+sudo apt install php-fpm php-mysql
+```
+
+You now have your PHP components installed. Next, you’ll configure Nginx to use them.
